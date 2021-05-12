@@ -44,8 +44,11 @@ class Board:
     ((0, 2), (1, 1), (2, 0))\
   ]
 
-  def __init__(self):
-    self.board = [[0,0,0], [0,0,0], [0,0,0]]
+  def __init__(self, board = None):
+    if board is None:
+      self.board = [[0,0,0], [0,0,0], [0,0,0]]
+    else:
+      self.board = board
 
   def __str__(self):
     return tochar(self.board[0][0]) + "───" + tochar(self.board[0][1]) + "───" + tochar(self.board[0][2]) + "\n" \
