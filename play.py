@@ -1,25 +1,9 @@
-from game import Game, Board
+from random import Random
+from game import Game
 
 from human import Human
-
-# board = Board()
-# board.move((1, (0, 0)))
-# board.move((1, (0, 1)))
-# board.move((1, (0, 2)))
-# board.move(((0, 0), (1, 0)))
-# print(board.legalDestinations((1, 0)))
-# print(board.legalDestinations((0, 0)))
-# print(board.legalMoves(1))
-# print(board)
-# print(board.winner())
-
-# board.move(((1, 0), (0, 0)))
-# print(board)
-# print(board.winner())
-
-# human = Human()
-
-# print(str(human.getNextMove(1, board)))
+from minimax import Minimax
+from rando import Rando
 
 import sys
 
@@ -28,8 +12,13 @@ p = []
 n = len(sys.argv)
 
 for i in range(1, 3):
-  if sys.argv[i] == "human":
-    p.append(Human(i - 1))
+  match sys.argv[i]:
+    case "human":
+      p.append(Human(i - 1))
+    case "random":
+      p.append(Rando(i - 1))
+    case "minimax":
+      p.append(Minimax(i - 1))
 
 games = 1
 if n == 4:
@@ -46,7 +35,7 @@ for gamenr in range(games):
     game = Game(p[1], p[0])
   winner = game.start()
   wins[winner.id] += 1
-  print("And the winner of game #" + str(gamenr) +" is Player " + str(winner.name))
+  print("And the winner of game #" + str(gamenr) +" is " + str(winner.name))
 
 if games > 1:
   print("The series of " + str(games) + " games is over.")
