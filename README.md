@@ -17,7 +17,8 @@ The project is very simple.
 `play.py` is the main script and helps set up games between players.
 It can be run with `py play.py PLAYER0 PLAYER1 [NUMBEROFGAMES]`
 `PLAYER0`/`PLAYER1` must be identifiers for agents that `play.py` knows of, such as:
-- `human`
+- `human` to play through the CLI
+- `random` for Rando the random Bot
 - `minimax`
 
 `NUMBEROFGAMES` defines how many games will be played. Players will alternate their starting turn. Default value is `1`.
