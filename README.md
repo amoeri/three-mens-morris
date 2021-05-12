@@ -15,7 +15,7 @@ The project is very simple.
 2. `Board` which represents the current board state and has a nice `__str__` method.
 
 `play.py` is the main script and helps set up games between players.
-It can be run with `py play.py PLAYER0 PLAYER1 \[NUMBEROFGAMES\]`
+It can be run with `py play.py PLAYER0 PLAYER1 [NUMBEROFGAMES]`
 `PLAYER0`/`PLAYER1` must be identifiers for agents that `play.py` knows of, such as:
 - `human`
 - `minimax`
