@@ -29,12 +29,12 @@ It must implement:
 1. A constructor that takes one parameter (id) which will be 0 or 1
 2. Fields `id` (passed to the constructor) and `name` (A string identifying what type of agent it is, ideally also include the id in the name)
 3. A method `getNextMove(self, player, board)` where:
-  1. `player` is the identifier used on the board during this game for that player (either -1 or 1)
-  2. `board` is an Object of type Board as defined in `game.py`
-  3. the method returns a valid move, which can either be:
+  * `player` is the identifier used on the board during this game for that player (either -1 or 1)
+  * `board` is an Object of type Board as defined in `game.py`
+  * the method returns a valid move, which can either be:
     1. A tupel `(player, (x, y))` to set a stone (in the starting phase of the game), where `player` is the identifier passed to the method and `x` and `y` are the coordinates of the the position on the board (0, 1, 2), `x` beeing the row and `y` beeing the column
     2. A tupel `((x1, y1), (x2, y2))` to move a stone from x1, y1 to x2, y2 during the second phase of the game.
-  4. It is strongly encouranges to use the boards `legalMoves` method to get a list of the playable moves
+  * It is strongly encouranges to use the boards `legalMoves` method to get a list of the playable moves
 
 There are currently no checks in place if the moves returned are acutally legal.
 
