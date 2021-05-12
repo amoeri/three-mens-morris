@@ -6,7 +6,7 @@ BFH BTI7501p semester project
 This project uses the rules where a stone can only be move to adjacent spots.
 
 ## Requirements
-- Python 3.10
+- Python 3.10, currently (2021-05-21) only available as developer preview [here](https://www.python.org/downloads/release/python-3100a7/)
 
 ## Project setup
 The project is very simple.
