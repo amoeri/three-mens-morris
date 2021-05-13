@@ -22,7 +22,7 @@ It can be run with
 `PLAYER0`/`PLAYER1` must be identifiers for agents that `play.py` knows of, such as:
 - `human` to play through the CLI
 - `random` for Rando the random Bot
-- `minimax`
+- `minimax` for minimax algorithm, max depth can be set in `play.py` or `minimax.py`
 
 `NUMBEROFGAMES` defines how many games will be played. Players will alternate their starting turn. Default value is `1`.
 `play.py` will also print whenever a game is started and ended to the terminal, aswell as a score total if more than one game is played.
@@ -42,3 +42,5 @@ It must implement:
 
 There are currently no checks in place if the moves returned are acutally legal.
 
+### Logs
+Full game logs, including the board state after each turn will be writting to `games.log`
