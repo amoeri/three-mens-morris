@@ -1,3 +1,10 @@
+import logging
+logging.basicConfig(filename='games.log', encoding='utf-8', level=logging.DEBUG)
+
+from datetime import datetime
+
+now = datetime.now()
+
 from random import Random
 from game import Game
 
@@ -24,11 +31,16 @@ games = 1
 if n == 4:
   games = int(sys.argv[3])
 
+logging.info("New run starting at " + str(now))
+
+
 print("Starting " + str(games) + " game(s) between " + p[0].name + " and " + p[1].name)
+logging.info("Starting " + str(games) + " game(s) between " + p[0].name + " and " + p[1].name)
 
 wins = [0, 0]
 for gamenr in range(games):
   print("Starting game #" + str(gamenr))
+  logging.info("Starting game #" + str(gamenr))
   if (gamenr % 2) == 0:
     game = Game(p[0], p[1])
   else:
@@ -36,10 +48,13 @@ for gamenr in range(games):
   winner = game.start()
   wins[winner.id] += 1
   print("And the winner of game #" + str(gamenr) +" is " + str(winner.name))
+  logging.info("And the winner of game #" + str(gamenr) +" is " + str(winner.name))
 
 if games > 1:
   print("The series of " + str(games) + " games is over.")
+  logging.info("The series of " + str(games) + " games is over.")
   print(p[0].name + " has won " + str(wins[0]) + " time(s) and " + p[1].name + ") has won " + str(wins[1]) + " time(s)")
+  logging.info(p[0].name + " has won " + str(wins[0]) + " time(s) and " + p[1].name + ") has won " + str(wins[1]) + " time(s)")
   if wins[0] > wins[1]:
     print("Congratulations to " + p[0].name + "!!!")
   elif wins[1] > wins[0]:

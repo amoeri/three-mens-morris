@@ -1,3 +1,6 @@
+import logging
+logging.basicConfig(filename='games.log', encoding='utf-8', level=logging.DEBUG)
+
 def tochar(value):
   match value:
     case 1:
@@ -129,12 +132,15 @@ class Game:
   def start(self):
     turn = 1 # refers to player1 from the game constructor and will be referred to as 1 on the board
     # thus player to will play on turn 0 and be -1 on the board... confusing, i know
+
+    logging.info("\n" + str(self.board))
     while self.board.winner() == 0:
       playerid = turn
       if playerid == 0:
         playerid = -1
 
       self.board.move(self.player[turn].getNextMove(playerid, self.board))
+      logging.info("\n" + str(self.board))
 
       if turn == 0:
         turn = 1
