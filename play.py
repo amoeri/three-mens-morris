@@ -25,7 +25,7 @@ for i in range(1, 3):
     case "random":
       p.append(Rando(i - 1))
     case "minimax":
-      p.append(Minimax(i - 1))
+      p.append(Minimax(i - 1, 7))
 
 games = 1
 if n == 4:

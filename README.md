@@ -22,7 +22,7 @@ It can be run with
 `PLAYER0`/`PLAYER1` must be identifiers for agents that `play.py` knows of, such as:
 - `human` to play through the CLI
 - `random` for Rando the random Bot
-- `minimax` for minimax algorithm, max depth can be set in `play.py` or `minimax.py`
+- `minimax` for minimax algorithm, max depth can be set in `play.py` as the second parameter of the `Minimax()` constructor. It has a default value of `7`.
 
 `NUMBEROFGAMES` defines how many games will be played. Players will alternate their starting turn. Default value is `1`.
 `play.py` will also print whenever a game is started and ended to the terminal, aswell as a score total if more than one game is played.
@@ -44,3 +44,24 @@ There are currently no checks in place if the moves returned are acutally legal.
 
 ### Logs
 Full game logs, including the board state after each turn will be writting to `games.log`
+
+
+### Obeservations
+#### Minimax
+The current implementation is very inefficient and could be improved upon, especially when playing multiple games, by leveraring pythons `@cache` from the `functools` library.
+A maximal depth 7 seems to win a majority of games vs random and vs the developer. A depth of 3 will still loose around 10% vs random.
+
+#### Alpha-Beta-Pruning
+The current minimax implementation already does sume pruning. Since the evaluations can only be -1, 0 and 1 the opportunities are limited and it need to be investigated how if it can be appliad further or maybe alogn with some heuristic evaluation function.
+
+#### Monte Carlo Search
+TODO
+
+#### Heuristic evaluation function
+TODO
+
+#### Regret-Minimization
+TODO
+
+### Results
+TODO: For the final evaluation, a tournament script should be implemented to let all bots play against one another.
