@@ -58,7 +58,7 @@ The current minimax implementation already does sume pruning. Since the evaluati
 TODO
 
 #### Heuristic evaluation function
-TODO
+TODO @jodem1
 
 #### Regret-Minimization
 TODO

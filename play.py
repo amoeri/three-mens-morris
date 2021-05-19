@@ -53,11 +53,11 @@ for gamenr in range(games):
 if games > 1:
   print("The series of " + str(games) + " games is over.")
   logging.info("The series of " + str(games) + " games is over.")
-  print(p[0].name + " has won " + str(wins[0]) + " time(s) and " + p[1].name + ") has won " + str(wins[1]) + " time(s)")
+  print(p[0].name + " has won " + str(wins[0]) + " time(s) and " + p[1].name + " has won " + str(wins[1]) + " time(s)")
   logging.info(p[0].name + " has won " + str(wins[0]) + " time(s) and " + p[1].name + ") has won " + str(wins[1]) + " time(s)")
   if wins[0] > wins[1]:
     print("Congratulations to " + p[0].name + "!!!")
   elif wins[1] > wins[0]:
     print("Congratulations to " + p[1].name + "!!!")
   else:
-    print("Congratulations to both player for this draw...")
+    print("Congratulations to both players for this draw...")
