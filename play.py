@@ -11,6 +11,7 @@ from game import Game
 from human import Human
 from minimax import Minimax
 from rando import Rando
+from reader import Reader
 
 import sys
 
@@ -26,6 +27,10 @@ for i in range(1, 3):
       p.append(Rando(i - 1))
     case "minimax":
       p.append(Minimax(i - 1, 7))
+    case "reader+minimax":
+      p.append(Reader(i - 1, Minimax(i - 1, 7)))
+    case "reader+random":
+      p.append(Reader(i - 1, Rando(i - 1)))
 
 games = 1
 if n == 4:
