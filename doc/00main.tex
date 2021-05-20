@@ -1,0 +1,135 @@
+\documentclass[
+  12pt, % Fontsize
+  a4paper, % papersize
+  %twoside, % For twosided documents
+  oneside,
+  %openright, % Chapters start always at a odd page
+  numbers=noenddot, % No final dots in Sectionnumbers, e.g 1.2 instead of 1.2.
+  BCOR=5mm, % Correction length for lost space from binding
+  parskip=half*, %No indent but spacing between paragraphs
+  thesis
+]{bfhbook}
+
+\usepackage{pdfpages}
+\usepackage{biblatex}
+\bibliography{bib}
+
+% Test Template for bfhbook.cls
+\usepackage[T1]{fontenc}
+% Coding 
+\usepackage[utf8]{inputenc}
+% Language setting
+\usepackage[english]{babel}
+
+% For more sophisticated blindtext, including lists, math text, etc.
+\usepackage{blindtext}
+
+% \usepackage{fonttable}
+% Hyperref
+\usepackage[                
+  % pdftex,                  % for PDF
+  colorlinks=true,         % colored links
+  linkcolor=black,         % color for links
+  citecolor=black,         % color for references
+  urlcolor=black,          % color for url 
+  bookmarks=true
+]{hyperref}              
+
+\usepackage[acronym,toc]{glossaries} % Generate Glossaries
+\usepackage{booktabs} % For nicer tables
+\usepackage{threeparttable} % Table-Captions having the same width than the table
+\usepackage[singlelinecheck=off]{caption}
+\usepackage{siunitx} % Scientific Units and number setting
+\usepackage{listings} % For Program-Code
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Settings 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Type?? (Lecture Notes, BSc Thesis, Master Thesis, . . .) 
+% Use Variables \BSc, \Master, etc. for language support
+\type{Semester project, Game Theory (BTI7501p) '21}
+% Author(s)
+\author{Alexandre Moeri [moera1@bfh.ch] Kevin Amalthas [kevin.amalathas@students.bfh.ch] Markus Joder [jodem1@bfh.ch]}
+% Title
+\title{Three men's morris bot}
+% Short Title, will be used in the footline
+\shorttitle{Three men's morris bot}
+% Subtitle
+\subtitle{An exploration of search based bots to play the board game "Three men's morris"}
+% Titlepicture
+\titlepicture{titlepicture.png}
+%%
+
+% Topic of Study
+\degreeprogramme{Computer Science BSc}
+% Supervisor
+\thesisadvisor{Prof. Dr. Jürgen Eckerle}
+% Version
+\version{1.0}
+% Date
+\date{\today} % Or any other possible date
+% Departement
+% Use Variable for language support
+%\TI
+
+% Semester
+% Use Variable for language support
+%\semester
+
+% Logo(s)
+
+% Colors
+% Secondary Color for Graphics, Tables etc.
+% Naming: BFH*Color*light|middle|dark, e.g. BFHGreendark, BFHBluelight, etc.
+% Possible Color Values: Green, Blue, Purple, Brown 
+\newcommand{\seccolor}{BFHLightBlue} 
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+\makeindex
+\makeglossaries
+
+\begin{document}
+\maketitle
+%**************************************************************************
+\frontmatter % preliminary parts
+%**************************************************************************
+% Allows breaks in Math Formulars
+\allowdisplaybreaks
+
+\tableofcontents
+\sloppy
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Introduction
+%**************************************************************************
+\mainmatter % The main part
+%**************************************************************************
+%\part{Part One}
+%\chapter*{Management Summary}
+%\input{01management_summary}
+\chapter{Introduction}
+\input{02introduction}
+\chapter{Method}
+\input{03method}
+\chapter{Results}
+\input{04results}
+\chapter{Discussion}
+\input{05discussion}
+
+\backmatter
+% List of Figures
+\addcontentsline{toc}{chapter}{Figures}
+\listoffigures
+% List of Tables
+\addcontentsline{toc}{chapter}{Tables}
+\listoftables
+% Glossary
+%\printglossary
+% Bibliography
+\addcontentsline{toc}{chapter}{Bibliography}
+\printbibliography
+
+\addcontentsline{toc}{chapter}{Appendix}
+\addcontentsline{toc}{subsection}{Python Listings}
+\end{document}
