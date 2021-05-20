@@ -99,6 +99,8 @@ class Board:
 
   def legalMoves(self, player):
     moves = []
+    if self.winner()!= 0:
+      return moves
     if self.hasAllStonesSet(player):
       for position in self.stonePositions(player):
         for destination in self.legalDestinations(position):
