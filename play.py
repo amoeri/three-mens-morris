@@ -5,6 +5,18 @@ from datetime import datetime
 
 now = datetime.now()
 
+USAGE = """
+Usage: play.py PLAYER0 PLAYER1 [NUMBEROFGAMES]
+
+PLAYER0/PLAYER1
+  Must be identifierts for agents that `play.py` knows of, such as:
+  - human
+  - random
+  - minimax
+  - reader-minimax
+  - reader-random
+"""
+
 from random import Random
 from game import Game
 
@@ -19,6 +31,10 @@ p = []
 
 n = len(sys.argv)
 
+if n < 3 or n > 4:
+  print(USAGE)
+  sys.exit()
+
 for i in range(1, 3):
   match sys.argv[i]:
     case "human":
@@ -31,6 +47,9 @@ for i in range(1, 3):
       p.append(Reader(i - 1, Minimax(i - 1, 7)))
     case "reader+random":
       p.append(Reader(i - 1, Rando(i - 1)))
+    case _:
+      print("Agent identifier ('" + sys.argv[i] + "') unknown")
+      sys.exit()
 
 games = 1
 if n == 4:
