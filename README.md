@@ -23,11 +23,17 @@ It can be run with
 - `human` to play through the CLI
 - `random` for Rando the random Bot
 - `minimax` for minimax algorithm, max depth can be set in `play.py` as the second parameter of the `Minimax()` constructor. It has a default value of `7`.
-- `reader-minimax` for a minimax player that uses the opening book `openings.book` and falls back to standard minimax when it reaches an unknown position.
-- `reader-random` same principle as `reader-minimax` but falls back to the random bot.
+- `reader+minimax` for a minimax player that uses the opening book `openings.book` and falls back to standard minimax when it reaches an unknown position.
+- `reader+random` same principle as `reader+minimax` but falls back to the random bot.
 
 `NUMBEROFGAMES` defines how many games will be played. Players will alternate their starting turn. Default value is `1`.
 `play.py` will also print whenever a game is started and ended to the terminal, aswell as a score total if more than one game is played.
+
+`tournament.py` let all bots play against one another and saves the result in `tournament.results`. The participating bots are declared in the constant `PARTICIPATING_AGENT_IDENTIFIERS`.
+
+`py tournament.py [NUMBEROFGAMES]`
+
+`NUMBEROFGAMES` defines how many games will be played per bot encounter.
 
 ### Agents
 Any agent can be added playing different strategies.
@@ -69,10 +75,10 @@ The current minimax implementation already does sume pruning. Since the evaluati
 TODO
 
 #### Heuristic evaluation function
-TODO @jodem1
+TODO
 
 #### Regret-Minimization
 TODO
 
 ### Results
-TODO: For the final evaluation, a tournament script should be implemented to let all bots play against one another.
+TODO: For the final evaluation, a tournament script should be implemented to let all bots play against one another. @jodem1
