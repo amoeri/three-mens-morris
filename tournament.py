@@ -15,8 +15,7 @@ NUMBEROFGAMES
   Number of rounds each bot has to play against another bot. Defaults to 1'000.
 """
 
-# PARTICIPATING_AGENT_IDENTIFIERS = ['random', 'minimax', 'reader+minimax', 'reader+random']
-PARTICIPATING_AGENT_IDENTIFIERS = ['random', 'minimax', 'reader+minimax']
+PARTICIPATING_AGENT_IDENTIFIERS = ['random', 'minimax', 'reader+minimax', 'reader+random']
 
 if len(sys.argv) not in range(1,3):
   print(USAGE)
