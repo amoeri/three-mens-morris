@@ -4,11 +4,11 @@ import copy
 
 f = open("openings.book", "w")
 
-MAX_DEPTH = 8
+MAX_DEPTH = 12
 minimax = Minimax(None, MAX_DEPTH)
 initialBoard = Board()
 
-firstPlayerOpeningBook = {'boad':'move'}
+firstPlayerOpeningBook = {'board':'move'}
 def book(this, board, depth):
   moves = board.legalMoves(1)
   if len(moves) <= 0:
@@ -46,7 +46,7 @@ def secondBook(this, board, depth):
         book(this, newBoard, depth + 2)
       break
 
-secondPlayerOpeningBook = {'boad':'move'}
+secondPlayerOpeningBook = {'board':'move'}
 for move in initialBoard.legalMoves(1):
   newBoard = Board(copy.deepcopy(initialBoard.move(move)))
   secondBook(secondPlayerOpeningBook, newBoard, 0)
