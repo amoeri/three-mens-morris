@@ -4,7 +4,7 @@ import copy
 
 f = open("openings.book", "w")
 
-MAX_DEPTH = 12
+MAX_DEPTH = 10
 minimax = Minimax(None, MAX_DEPTH)
 initialBoard = Board()
 
