@@ -66,7 +66,7 @@ def play(args):
       case "minimax":
         p.append(Minimax(i - 1, 7))
       case "monte":
-        p.append(MonteCarlo(i - 1, 100))
+        p.append(MonteCarlo(i - 1, 1000))
       case "reader+minimax":
         p.append(Reader(i - 1, Minimax(i - 1, 7)))
       case "reader+random":

@@ -12,7 +12,6 @@ class MonteCarlo:
         self.name = "Player " + str(id) + " (Monte)"
 
         self.max_simulations = max_simulations
-        self.max_simulations = 100
         self.plays = {}
         self.wins = {}
 
