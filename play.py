@@ -20,6 +20,7 @@ from game import Game
 
 from human import Human
 from minimax import Minimax
+from monte import MonteCarlo
 from rando import Rando
 from reader import Reader
 
@@ -64,6 +65,8 @@ def play(args):
         p.append(Rando(i - 1))
       case "minimax":
         p.append(Minimax(i - 1, 7))
+      case "monte":
+        p.append(MonteCarlo(i - 1, 100))
       case "reader+minimax":
         p.append(Reader(i - 1, Minimax(i - 1, 7)))
       case "reader+random":
