@@ -19,8 +19,8 @@ We let the bots with these basic configuration compete against each other:
         \rowcolor{\seccolor!50}
         Matchup & Result \\\bfhmidline
         Random vs Minimax (d5) & 0 : 1000 \\\bfhmidline
-        Random vs Monte (s1000) & 298 : 702 (3:7) \\\bfhmidline
-        Minimax (d5) vs Monte (s1000) & 813 : 187 (8:2)\\\bfhmidline
+        Random vs Monte (s1000) & 298 : 702 \\\bfhmidline
+        Minimax (d5) vs Monte (s1000) & 813 : 187 \\\bfhmidline
       \end{tabular}
       \caption{Results for basic bot configuration}
     \end{threeparttable}
@@ -43,7 +43,7 @@ We increase the max depth for the Minimax algorithm from 5 to 7 and verify if th
         \rowcolor{\seccolor!50}
         Matchup & Result \\\bfhmidline
         Random vs Minimax (d7) & 0 : 1000 \\\bfhmidline
-        Random vs Monte (s1000) & 304 : 696 (7:23) \\\bfhmidline
+        Random vs Monte (s1000) & 304 : 696 \\\bfhmidline
         Minimax (d7) vs Monte (s1000) & 1000 : 0 \\\bfhmidline
       \end{tabular}
       \caption{Results for increased Minimax depth}
@@ -67,7 +67,7 @@ We give the Monte Carlo algorithm a maximum number of simulations of 2'000 inste
         \rowcolor{\seccolor!50}
         Matchup & Result \\\bfhmidline
         Random vs Minimax (d7) & 0 : 1000 \\\bfhmidline
-        Random vs Monte (s2000) & 145 : 855 (4:6, 1:29, 7:43, 3:17) \\\bfhmidline
+        Random vs Monte (s2000) & 145 : 855 \\\bfhmidline
         Minimax (d7) vs Monte (s2000) & 1000 : 0 \\\bfhmidline
       \end{tabular}
       \caption{Increased max simulations for Monte Carlo}
@@ -91,7 +91,7 @@ We further increase the max number of simulations for Monte Carlo to 5'000, whic
         Matchup & Result \\\bfhmidline
         Random vs Minimax (d7) & 0 : 1000 \\\bfhmidline
         Random vs Monte (s5000) & 0 : 1000 \\\bfhmidline
-        Minimax (d7) vs Monte (s5000) & 866 : 134 (2:8/1:9) \\\bfhmidline
+        Minimax (d7) vs Monte (s5000) & 866 : 134 \\\bfhmidline
       \end{tabular}
       \caption{Further increased max simulations for Monte Carlo}
     \end{threeparttable}
@@ -114,7 +114,7 @@ Trying to get even more wins for Monte Carlo we double the maximum number of sim
         Matchup & Result \\\bfhmidline
         Random vs Minimax (d7) & 0 : 1000 \\\bfhmidline
         Random vs Monte (s10000) & 0 : 1000 \\\bfhmidline
-        Minimax (d7) vs Monte (s10000) & 699 : 301 (7:3, 18:2) \\\bfhmidline
+        Minimax (d7) vs Monte (s10000) & 699 : 301 \\\bfhmidline
       \end{tabular}
       \caption{Monte Carlo with 10'000 simulations}
     \end{threeparttable}
@@ -138,7 +138,7 @@ Finally, we try to use the opening book for our Minimax algorithm. We use the ba
         \rowcolor{\seccolor!50}
         Matchup & Result \\\bfhmidline
         Minimax (reader d5)  vs Random & 1000 : 0 \\\bfhmidline
-        Minimax (reader d5) vs Monte (s1000) & 946 : 54 (19:1, 19:1, 28:2 ) \\\bfhmidline
+        Minimax (reader d5) vs Monte (s1000) & 946 : 54 \\\bfhmidline
       \end{tabular}
       \caption{Minimax with openin books (reader)}
     \end{threeparttable}
