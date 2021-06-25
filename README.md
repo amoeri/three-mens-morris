@@ -1,6 +1,9 @@
 # Three men's morris
 BFH BTI7501p semester project
 
+## Report
+The final formal report can be found [here](/doc/three-mens-morris-report.pdf)
+
 ## Game rules
 [Wikipedia](https://en.wikipedia.org/wiki/Three_men%27s_morris)
 This project uses the rules where a stone can only be move to adjacent spots.
