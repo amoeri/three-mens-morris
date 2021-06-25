@@ -6,14 +6,22 @@ and thus the game engine and agents were implemented using an early develepor pr
 \section{Game}
 
 \subsection{Engine}
-
-\begin{lstlisting}[language=Python]
-\end{lstlisting}
+The project architecture is very simple.
+`game.py` implements the game according to the rules mentioned above within two classes:
+\begin{enumerate}
+    \item `Game` which takes two players and let's them play against each other. The firt player passed will be going first.
+    \item `Board` which represents the current board state and has a nice string method.
+\end{enumerate}
 
 \subsection{Drivers}
+To simplify the running of games two driver scripts were implemented:
+\begin{enumerate}
+    \item play.py to start a game or a series of games between two agents
+    \item tournament.py to start a tournament (several bots playing against eachother)
+\end{enumerate}
 \subsubsection{Play}
 play.py is the main script and helps set up games between players.
-It can be run with
+It can be run with:
 
 \lstinline{py play.py PLAYER0 PLAYER1 [NUMBEROFGAMES]}
 
@@ -32,9 +40,11 @@ It can be run with
 `tournament.py` let all bots play against one another and saves the result
 in `tournament.results`.
 The participating bots are declared in the constant
-PARTICIPATING_AGENT_IDENTIFIERS.
+PARTICIPATING-AGENT-IDENTIFIERS.
 
-`py tournament.py [NUMBEROFGAMES]`
+It can be run with:
+
+\lstinline{py tournament.py [NUMBEROFGAMES]}
 
 `NUMBEROFGAMES` defines how many games will be played per bot encounter.
 
@@ -82,6 +92,8 @@ The random bot was used as a baseline for further exploration and simply always
 plays a random legal move.
 
 \subsection{Minimax}
+minimax.py implements the Minimax algorithm. The maximum depth to be searched can be passed or set as default within the constructor method.
+It implements some basic Alpha-Beta-Pruning by only following one the first found winning line when one is available.
 
 \subsection{Monte Carlo Tree Search}
 For the Monte Carlo tree search, we followed the fundamental principle in implementing the heuristic search algorithm. Each round of evaluation of the best possible move consists of four steps:
@@ -111,5 +123,6 @@ As this renders the evaluation of the other bots unuseful, it was disregarded in
 the further evaluation.
 
 \section{Logs}
-Full game logs, including the board state after each turn will be writting to `games.log`
+Full game logs, including the board state after each turn will be writting to `games.log`.
+
 Tournament results are written to `tournament.results`

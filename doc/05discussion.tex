@@ -1,5 +1,13 @@
 \section{Conclusion}
+Three men's morris was a simple enough game to implement quickly and get acquainted with the different algorithms that were to be studied in this course.
+Due to the nature of the game, especially it's low complexity, the minimax approach has shown to be the most useful, since at relatively low depth winning sequences can be found, and as seen previously even a winning strategy was found for player one.
+Minimax is, due to it's simple implementation, relatively slow. It was thus interesting to explore other options and as can be seen in our results the monte carlo approach also renders useful results, at a much faster speed.
+Lastly, our current assumption is that, when player 1 does not follow the winning strategy there is always potential for an endless game, that will at some point repeat, when both players refuse to play into a loosing line.
 
 \section{Outlook}
+There are several potential optimization that could be made to the project, especially the minimax implementation could be improved on by on one side caching the board state, which would be estimated to already dramatically improve the speed, as well a implement a paralleled version of the algorithm, which would be able to take advantage of multiple core machines and thus also render results faster.
+It is thus remains to be seen whether player 2 has winning strategies if player 1 does not start with the center stone.
 
-\section{Final words}
+\section{Sources}
+
+The entire projects source code can be found at \url{https://github.com/amoeri/three-mens-morris}.
