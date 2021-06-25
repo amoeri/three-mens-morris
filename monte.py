@@ -9,7 +9,7 @@ class MonteCarlo:
         """ Takes an instance of a board and optionally some keyword arguments.
         Initializes the list of games states and the statistics table. """
         self.id = id
-        self.name = "Player " + str(id) + " (Monte)"
+        self.name = "Player " + str(id) + " (Monte, sim: " + str(max_simulations) + ")"
 
         self.max_simulations = max_simulations
         self.plays = {}

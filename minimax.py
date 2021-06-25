@@ -7,7 +7,7 @@ class Minimax:
 
   def __init__(self, id, maxDepth=7):
     self.id = id
-    self.name = "Player " + str(id) + " (Minimax)"
+    self.name = "Player " + str(id) + " (Minimax, depth: " + str(maxDepth) + ")"
     self.maxDepth = maxDepth
   
   def getNextMove(self, player, board):
