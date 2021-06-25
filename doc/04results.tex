@@ -1,4 +1,77 @@
-\section{Results}
+\section{Tournaments}
+To verify how well each bot performs, we have the different agents compete against each other in a tournament. To get a reference on whether a bot is reasonably configured, we also let a random bot compete in each case, which makes arbitrary moves. It is clear that all bots should clearly win against this agent. To get a meaningful result, we let the bots face each other 1000 times in each encounter.
+
+\subsection{Participating bots}
+Monte, Minimax (Reader+Minimax ?), Random
+
+\subsection{Best guess configuration}
+In a first pass, we tried to obtain a solid configurations of the bots through empirical observation. For Minimax we found a maximum depth of 7 (d7) and for Monte Carlo a maximum number of simulations of 1'000 (s1000) as a reasonable basic configuration.
+
+We let the bots with these basic configuration compete against each other:
+
+\begin{table}[ht]
+  \renewcommand{\arraystretch}{2}
+  \arrayrulecolor{white}
+  \begin{center}
+    \rowcolors{1}{\seccolor!10}{\seccolor!10}
+    \begin{threeparttable}
+      \begin{tabular}{c|c}
+        \rowcolor{\seccolor!50}
+        Matchup & Result \\\bfhmidline
+        Random vs Minimax (d7) & 0 : 1000 \\\bfhmidline
+        Random vs Monte (s1000) & 304 : 696 (7:23) \\\bfhmidline
+        Minimax (d7) vs Monte (s1000) & 1000 : 0 \\\bfhmidline
+      \end{tabular}
+      \caption{Basic configuration}
+    \end{threeparttable}
+    \label{tab:table1}
+  \end{center}
+\end{table}
+
+\subsection{Minimax with more depth}
+We increase the max depth for the Minimax algorithm to 9 and verify if this improves the performance against the other bots.
+
+\begin{table}[ht]
+  \renewcommand{\arraystretch}{2}
+  \arrayrulecolor{white}
+  \begin{center}
+    \rowcolors{1}{\seccolor!10}{\seccolor!10}
+    \begin{threeparttable}
+      \begin{tabular}{c|c}
+        \rowcolor{\seccolor!50}
+        Matchup & Result \\\bfhmidline
+        Random vs Minimax (d9) & 0 : 0 \\\bfhmidline
+        Random vs Monte (s1000) & 0 : 0 \\\bfhmidline
+        Minimax (d9) vs Monte (s1000) & 0 : 0 \\\bfhmidline
+      \end{tabular}
+      \caption{Increased max depth for Minimax}
+    \end{threeparttable}
+    \label{tab:table1}
+  \end{center}
+\end{table}
+
+\subsection{More simulations for Monte Carlo}
+We increase the max depth for the Minimax algorithm to 9 and verify if this improves the performance against the other bots.
+
+\begin{table}[ht]
+  \renewcommand{\arraystretch}{2}
+  \arrayrulecolor{white}
+  \begin{center}
+    \rowcolors{1}{\seccolor!10}{\seccolor!10}
+    \begin{threeparttable}
+      \begin{tabular}{c|c}
+        \rowcolor{\seccolor!50}
+        Matchup & Result \\\bfhmidline
+        Random vs Minimax (d9) & 0 : 0 \\\bfhmidline
+        Random vs Monte (s2000) & 0 : 0 \\\bfhmidline
+        Minimax (d9) vs Monte (s2000) & 0 : 0 \\\bfhmidline
+      \end{tabular}
+      \caption{Increased max simulations for Minimax}
+    \end{threeparttable}
+    \label{tab:table1}
+  \end{center}
+\end{table}
+
 
 \begin{table}[ht]
   \renewcommand{\arraystretch}{2}
