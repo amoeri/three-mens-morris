@@ -58,7 +58,7 @@ class MonteCarlo:
             first_move_key = first_move
 
             if current_player == -1 and board_copy.winner() == -1:
-                score *= -1
+                score -= 1
 
             if first_move_key in evaluations:
                 evaluations[first_move_key] += score
