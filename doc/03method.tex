@@ -8,12 +8,23 @@ and thus the game engine and agents were implemented using an early develepor pr
 \section{Agents}
 \begin{enumerate}
 	\item Enum 1
-	\item Enum 2
+	\item Monte Carlo Tree Search
 \end{enumerate}
 
 \textit{Italic text}
 \textbf{Bold Text}
 
+\subsection{Monte Carlo Tree Search}
+For the Monte Carlo tree search, we followed the fundamental principle in implementing the heuristic search algorithm. Each round of evaluation of the best possible move consists of four steps:
+\begin{itemize}
+    \item Selection
+    \item Expansion
+    \item Simulation
+    \item Backpropagation
+\end{itemize}
+In our implementation, we try to follow the steps mentioned above.
+
+The basic functionality of our algorithm is to play a given number of simulations until a winner is determined. During the simulation phase, a score is kept for every simulation, which defines the move's efficiency for the AI to win. Afterwards, the best possible action is then chosen and returned.                                     
 \lstset{language=Python}
 \begin{lstlisting}
 from random import stuff

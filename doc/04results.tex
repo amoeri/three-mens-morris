@@ -1,13 +1,37 @@
 \section{Tournaments}
-To verify how well each bot performs, we have the different agents compete against each other in a tournament. To get a reference on whether a bot is reasonably configured, we also let a random bot compete in each case, which makes arbitrary moves. It is clear that all bots should clearly win against this agent. To get a meaningful result, we let the bots face each other 1000 times in each encounter.
+To verify how well each bot performs, we have the different agents compete against each other in a tournament. To get a reference on whether a bot is reasonably configured, we also let a random bot compete in each case, which makes arbitrary moves. It is clear that all bots should win by a wide margin against this random agent. To get meaningful results, we let the bots face each other 1000 times in each encounter.
 
 \subsection{Participating bots}
-Monte, Minimax (Reader+Minimax ?), Random
+The participating bots in our torunaments are the bots described in the chapters before (Random, Monte Carlo and Minimax). We use different configurations for Monte Carlo and Minimax and verifiy if they perform better with it or not.
 
-\subsection{Best guess configuration}
-In a first pass, we tried to obtain a solid configurations of the bots through empirical observation. For Minimax we found a maximum depth of 7 (d7) and for Monte Carlo a maximum number of simulations of 1'000 (s1000) as a reasonable basic configuration.
+\subsection{Best guess starting configuration}
+In a first pass, we tried to obtain a solid base configurations for our bots through empirical observation with a small number of games played. For Minimax we found a maximum depth of 5 (d5) and for Monte Carlo a maximum number of simulations of 1'000 (s1000) as a reasonable start configuration.
 
 We let the bots with these basic configuration compete against each other:
+
+\begin{table}[ht]
+  \renewcommand{\arraystretch}{2}
+  \arrayrulecolor{white}
+  \begin{center}
+    \rowcolors{1}{\seccolor!10}{\seccolor!10}
+    \begin{threeparttable}
+      \begin{tabular}{c|c}
+        \rowcolor{\seccolor!50}
+        Matchup & Result \\\bfhmidline
+        Random vs Minimax (d5) & 0 : 1000 \\\bfhmidline
+        Random vs Monte (s1000) & 298 : 702 (3:7) \\\bfhmidline
+        Minimax (d5) vs Monte (s1000) & 813 : 187 (8:2)\\\bfhmidline
+      \end{tabular}
+      \caption{Results for basic bot configuration}
+    \end{threeparttable}
+    \label{tab:table1}
+  \end{center}
+\end{table}
+
+Minimax with a depth 5 wins every game against the random bot, and around 80\% of games against the Monte Carlo bot. Monte Carlo loses quite some games against the random bot (around 30\%), against Minimax it only wins around 20\% of all games.
+
+\subsection{Minimax with more depth}
+We increase the max depth for the Minimax algorithm from 5 to 7 and verify if this improves the performance against the other bots.
 
 \begin{table}[ht]
   \renewcommand{\arraystretch}{2}
@@ -22,14 +46,16 @@ We let the bots with these basic configuration compete against each other:
         Random vs Monte (s1000) & 304 : 696 (7:23) \\\bfhmidline
         Minimax (d7) vs Monte (s1000) & 1000 : 0 \\\bfhmidline
       \end{tabular}
-      \caption{Basic configuration}
+      \caption{Results for increased Minimax depth}
     \end{threeparttable}
     \label{tab:table1}
   \end{center}
 \end{table}
 
-\subsection{Minimax with more depth}
-We increase the max depth for the Minimax algorithm to 9 and verify if this improves the performance against the other bots.
+Minimax with depth 7 still wins all games against the random bot. Against Monte Carlo we see a significant performance increase, as it now wins every single game out of 1'000 games.
+
+\subsection{Higher maximum of simulations for Monte Carlo}
+We give the Monte Carlo algorithm a maximum number of simulations of 2'000 instead of 1'000. Let's verify if this improves the performance against the other bots.
 
 \begin{table}[ht]
   \renewcommand{\arraystretch}{2}
@@ -40,18 +66,19 @@ We increase the max depth for the Minimax algorithm to 9 and verify if this impr
       \begin{tabular}{c|c}
         \rowcolor{\seccolor!50}
         Matchup & Result \\\bfhmidline
-        Random vs Minimax (d9) & 0 : 0 \\\bfhmidline
-        Random vs Monte (s1000) & 0 : 0 \\\bfhmidline
-        Minimax (d9) vs Monte (s1000) & 0 : 0 \\\bfhmidline
+        Random vs Minimax (d7) & 0 : 1000 \\\bfhmidline
+        Random vs Monte (s2000) & 145 : 855 (4:6, 1:29, 7:43, 3:17) \\\bfhmidline
+        Minimax (d7) vs Monte (s2000) & 1000 : 0 \\\bfhmidline
       \end{tabular}
-      \caption{Increased max depth for Minimax}
+      \caption{Increased max simulations for Monte Carlo}
     \end{threeparttable}
     \label{tab:table1}
   \end{center}
 \end{table}
 
-\subsection{More simulations for Monte Carlo}
-We increase the max depth for the Minimax algorithm to 9 and verify if this improves the performance against the other bots.
+The higher amount of maximum simulations increases the performance of our Monte Carlo algorithm against the random bot. Monte Carlo wins now around 85\% of his games against the random but, compared to the 70\% with a maximum of 1000 simulations). Against Minimax, Monte Carlo still cannot win a single game.
+
+We further increase the max number of simulations for Monte Carlo to 5'000, which should improve its performance, and hopefully give Monte Carlo some wins against Minimax:
 
 \begin{table}[ht]
   \renewcommand{\arraystretch}{2}
@@ -62,16 +89,19 @@ We increase the max depth for the Minimax algorithm to 9 and verify if this impr
       \begin{tabular}{c|c}
         \rowcolor{\seccolor!50}
         Matchup & Result \\\bfhmidline
-        Random vs Minimax (d9) & 0 : 0 \\\bfhmidline
-        Random vs Monte (s2000) & 0 : 0 \\\bfhmidline
-        Minimax (d9) vs Monte (s2000) & 0 : 0 \\\bfhmidline
+        Random vs Minimax (d7) & 0 : 1000 \\\bfhmidline
+        Random vs Monte (s5000) & 0 : 1000 \\\bfhmidline
+        Minimax (d7) vs Monte (s5000) & 866 : 134 (2:8/1:9) \\\bfhmidline
       \end{tabular}
-      \caption{Increased max simulations for Minimax}
+      \caption{Further increased max simulations for Monte Carlo}
     \end{threeparttable}
     \label{tab:table1}
   \end{center}
 \end{table}
 
+Now, Monte Carlo clearly defeats the random bot. Altough still losing significantly to Minimax, Monte Carlo is now capable of winning games against Minimax with a depth of 7. The winning rate is around 20\%.
+
+Trying to get even more wins for Monte Carlo we double the maximum number of simulations from 5'000 to 10'0000.
 
 \begin{table}[ht]
   \renewcommand{\arraystretch}{2}
@@ -79,15 +109,41 @@ We increase the max depth for the Minimax algorithm to 9 and verify if this impr
   \begin{center}
     \rowcolors{1}{\seccolor!10}{\seccolor!10}
     \begin{threeparttable}
-      \begin{tabular}{lll}
+      \begin{tabular}{c|c}
         \rowcolor{\seccolor!50}
-        1 & 2 & 3 \\\bfhmidline
-        1 & 2 & 3 \\\bfhmidline
-        1 & 2 & 3 \\\bfhmidline
-        1 & 2 & 3 \\
+        Matchup & Result \\\bfhmidline
+        Random vs Minimax (d7) & 0 : 1000 \\\bfhmidline
+        Random vs Monte (s10000) & 0 : 1000 \\\bfhmidline
+        Minimax (d7) vs Monte (s10000) & 699 : 301 (7:3, 18:2) \\\bfhmidline
       \end{tabular}
-      \caption{Table caption}
+      \caption{Monte Carlo with 10'000 simulations}
     \end{threeparttable}
     \label{tab:table1}
   \end{center}
 \end{table}
+
+This further improved the performance of the Monte Carlo alogrithm against the Minimax. It now winns around 30\% of all games against Minimax.
+
+\subsection{Minimax with opening book}
+
+Finally, we try to use the opening book for our Minimax algorithm. We use the base configuration (depth of 5 for Minimax and 1000 simulations for Monte) for our bots:
+
+\begin{table}[ht]
+  \renewcommand{\arraystretch}{2}
+  \arrayrulecolor{white}
+  \begin{center}
+    \rowcolors{1}{\seccolor!10}{\seccolor!10}
+    \begin{threeparttable}
+      \begin{tabular}{c|c}
+        \rowcolor{\seccolor!50}
+        Matchup & Result \\\bfhmidline
+        Minimax (reader d5)  vs Random & 1000 : 0 \\\bfhmidline
+        Minimax (reader d5) vs Monte (s1000) & 946 : 54 (19:1, 19:1, 28:2 ) \\\bfhmidline
+      \end{tabular}
+      \caption{Minimax with openin books (reader)}
+    \end{threeparttable}
+    \label{tab:table1}
+  \end{center}
+\end{table}
+
+Without the opening books strategy, Minimax had a winning rate of around 80\%. With help of the opening strategies, Minimax is now winning more games (around 95\%) against Monte. This corresponds to an improvement of 15\%. 
