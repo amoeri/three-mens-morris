@@ -1,0 +1,19 @@
+============================= 25.06.2021 10:45:48 =========================================
+Starting a new tournament with 1 games for each match...
+(0:00:16.581999) Player 0 (Random) VS Player 1 (Minimax) => 0:1
+(0:00:07.358001) Player 0 (Random) VS Player 1 (Reader + Player 1 (Minimax)) => 0:1
+(0:00:00.002036) Player 0 (Random) VS Player 1 (Reader + Player 1 (Random)) => 0:1
+============================= 25.06.2021 10:48:52 =========================================
+Starting a new tournament with 1 games for each match...
+(0:00:09.206000) Player 0 (Random) VS Player 1 (Reader + Player 1 (Minimax)) => 0:1
+(0:00:01.216005) Player 0 (Random) VS Player 1 (Monte) => 0:1
+(0:00:00.817995) Player 0 (Reader + Player 0 (Minimax)) VS Player 1 (Monte) => 1:0
+Tournament finished in 0:00:11.240999
+============================= 25.06.2021 10:49:16 =========================================
+Starting a new tournament with 100 games for each match...
+============================= 25.06.2021 10:52:20 =========================================
+Starting a new tournament with 10 games for each match...
+(0:01:32.121996) Player 0 (Random) VS Player 1 (Reader + Player 1 (Minimax)) => 0:10
+(0:00:16.626030) Player 0 (Random) VS Player 1 (Monte) => 2:8
+(0:01:29.082982) Player 0 (Reader + Player 0 (Minimax)) VS Player 1 (Monte) => 10:0
+Tournament finished in 0:03:17.833011
