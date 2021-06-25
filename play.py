@@ -57,12 +57,6 @@ def play(args):
         p.append(Human(i - 1))
       case "random":
         p.append(Rando(i - 1))
-      case "random1":
-        p.append(Rando(i - 1))
-      case "random2":
-        p.append(Rando(i - 1))
-      case "random3":
-        p.append(Rando(i - 1))
       case "minimax":
         p.append(Minimax(i - 1, 7))
       case "monte":
